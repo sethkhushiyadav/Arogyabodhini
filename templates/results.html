@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results | Arogyabodhini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #e8f9f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #027373;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #013636;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #027373;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #014d4d;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Diagnosis Results</h2>
+
+        <div class="section">
+            <p><strong>Symptom:</strong> {{ symptom }}</p>
+            <p><strong>Suggested Medicine:</strong> {{ medicine }}</p>
+        </div>
+
+        {% if remedy %}
+        <div class="section">
+            <p><strong>Home Remedy:</strong> {{ remedy }}</p>
+        </div>
+        {% endif %}
+
+        {% if diet %}
+        <div class="section">
+            <p><strong>Diet Tip:</strong> {{ diet }}</p>
+        </div>
+        {% endif %}
+
+        {% if wellness %}
+        <div class="section">
+            <p><strong>Wellness Advice:</strong> {{ wellness }}</p>
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">← Back to Dashboard</a>
+    </div>
+</body>
+</html>

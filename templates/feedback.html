@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | Arogyabodhini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Give Your Feedback</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('feedback') }}" method="POST">
+            <label>Rate Us:</label>
+            <select name="rating" required>
+                <option value="">--Select Rating--</option>
+                <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+                <option value="4">⭐⭐⭐⭐ - Good</option>
+                <option value="3">⭐⭐⭐ - Average</option>
+                <option value="2">⭐⭐ - Poor</option>
+                <option value="1">⭐ - Bad</option>
+            </select>
+
+            <label>Comments:</label>
+            <textarea name="comments" rows="4" placeholder="Write your thoughts here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

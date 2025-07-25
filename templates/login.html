@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Arogyabodhini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('login') }}">Home</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome Back!</h1>
+        <p>Please log in to access your dashboard</p>
+        
+        <form action="{{ url_for('login') }}" method="POST" class="form-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="button">Login</button>
+        </form>
+
+        <p style="text-align: center; margin-top: 20px;">
+            Don’t have an account? <a href="{{ url_for('register') }}">Register here</a>
+        </p>
+    </div>
+</body>
+</html>

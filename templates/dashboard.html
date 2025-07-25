@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Arogyabodhini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 80px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0077cc;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0077cc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #005fa3;
+        }
+
+        @media (max-width: 500px) {
+            .nav-links a {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Arogyabodhini</h1>
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}">Home</a>
+            <a href="{{ url_for('symptoms') }}">Check Symptoms</a>
+            <a href="{{ url_for('feedback') }}">Give Feedback</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

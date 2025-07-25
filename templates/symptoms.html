@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Symptom Checker | Arogyabodhini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3fbfc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #026873;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        select,
+        button {
+            padding: 12px;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #018786;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #016f6e;
+        }
+
+        .results {
+            background-color: #e6f9f8;
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Check Your Symptoms</h2>
+
+        <form action="{{ url_for('symptoms') }}" method="POST">
+            <label class="label" for="symptom">Select a Symptom:</label>
+            <select name="symptom" id="symptom" required>
+                <option value="">-- Select --</option>
+                {% for symptom in symptoms %}
+                    <option value="{{ symptom.name }}"
+                        {% if selected_symptom and selected_symptom.name == symptom.name %}
+                            selected
+                        {% endif %}
+                    >
+                        {{ symptom.name }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">Check</button>
+        </form>
+
+        {% if selected_symptom %}
+        <div class="results">
+            <div class="section"><span class="label">Symptom:</span> {{ selected_symptom.name }}</div>
+            <div class="section"><span class="label">Suggested Medicines:</span> {{ selected_symptom.medicine }}</div>
+            <div class="section"><span class="label">Home Remedies:</span> {{ selected_symptom.remedy }}</div>
+            <div class="section"><span class="label">Diet Tips:</span> {{ selected_symptom.diet }}</div>
+            <div class="section"><span class="label">Wellness Advice:</span> {{ selected_symptom.wellness_tip }}</div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
