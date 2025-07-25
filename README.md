@@ -21,12 +21,18 @@
 
 ## 📸 Screenshots
 
+📝 Register Page
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163649.png)
+🔐 Login Page
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163802.png)
+🏠 Dashboard Page
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163822.png)
+🩺 Symptoms Checker Page
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163837.png)
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163850.png)
+💊 Result / Suggestion Page
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163900.png)
+📝 Feedback Page
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163922.png)
 ![image alt](https://github.com/sethkhushiyadav/Arogyabodhini/blob/f30157ff393cf6075ee6f291a251d74435e7e9eb/Screenshot%202025-07-25%20163931.png)
 
